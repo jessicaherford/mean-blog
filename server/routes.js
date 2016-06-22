@@ -4,7 +4,7 @@ var express = require('express'),
 	apiRouter = express.Router(),
 	router = express.Router();
 
-module.exports = function(app){	
+module.exports = function(app){
 
 	// angularjs catch all route
 	router.get('/*', function(req, res) {
@@ -13,4 +13,14 @@ module.exports = function(app){
 
 	app.use('/api', apiRouter);	// haven't built any api yet
 	app.use('/', router);
+
+	// home route
+	router.get('/', function(req, res){
+		res.render('admin/login');
+	})
+
+	router.get('/admin/register', function(req, res){
+		res.render('admin/register');
+	})
+
 };
