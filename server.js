@@ -20,6 +20,8 @@ app.use(cors());
 app.use(methodOverride());
 app.use(cookieParser());
 app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'ejs');
+
 
 // ROUTES
 require('./server/routes')(app);
